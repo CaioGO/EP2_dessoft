@@ -182,7 +182,7 @@ def g2(bar):
                     print(g1(bar))
                     print("A carta {} não pode ser movida. Escolha outra carta (digite um número entre 1 e {}): ".format(bar[i], len(bar)))
     return bar
-    
+
 def g3(bar):
 
     if bar > 1:
@@ -226,12 +226,31 @@ print('---------------------')
 print('{}'.format(Verde + ('BOA SORTE') + MC))
 print('---------------------')
 
+try:
+    com = int(input("Digite {} para iniciar o jogo  ".format(Azul + ('1') + MC)))
+    if com != 1:
+        v2 = True
+    elif com == 1:
+        com = com
+        v2 = False
+except ValueError:
+    c = 0
+    v2 = True
 
-
-com = int(input("Digite {} para iniciar o jogo  ".format(Azul + ('1') + MC)))
-
-while com != 1:
-    com = int(input("Digite {} para iniciar o jogo ".format(Azul + ('1') + MC)))
+while v2 == True:
+    try:
+        com = int(input("Digite {} para iniciar o jogo  ".format(Azul + ('1') + MC)))
+    except ValueError:
+        com = 0
+        v2 = True
+        
+    if com == 1:
+        com = com
+        v2 = False
+            
+                
+    else:
+        v2 = True
 
 
 f = True
