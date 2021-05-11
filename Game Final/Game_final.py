@@ -182,3 +182,70 @@ def g2(bar):
                     print(g1(bar))
                     print("A carta {} não pode ser movida. Escolha outra carta (digite um número entre 1 e {}): ".format(bar[i], len(bar)))
     return bar
+    
+def g3(bar):
+
+    if bar > 1:
+        print(Vermelho + ("------------") + MC)
+
+        print(Vermelho + ("YOU LOSE!") + MC)
+
+        print(Vermelho + ("------------") + MC)
+
+        novo_jogo = str(input("Quer jogar de novamente? {}: ".format(Azul + ('(s/n)') + MC)))
+
+        return novo_jogo
+
+    else:
+        print(Vermelho + ("------------") + MC)
+
+        print(Verde + ("YOU WIN!") + MC)
+
+        print(Vermelho + ("------------") + MC)
+
+        novo_jogo = str(input("Quer jogar de novamente? {}: ".format(Azul + ('(s/n)') + MC)))
+
+        return novo_jogo
+
+
+
+print(Azul + ("Paciência Acordeão") + MC)
+print("---------------------")
+print("{} ao jogo '{}', o objetivo é simples:".format((Verde + ('Bem-vindo(a)') + MC), (Azul + ("Paciência Acordeão") + MC)))
+print('As {} cartas do um baralho são embaralhadas e distribuídas em sequência. O objetivo do jogo é {}.'.format((Azul + ('52') + MC), (Verde + ('colocar todas as cartas em uma mesma pilha') + MC)))
+print("Há apenas {} movimentos possíveis, e são eles:".format(Vermelho + ('dois') + MC))
+print("{}. Empilhar a carta sobre uma {} anterior;".format((Azul + ('1') + MC), (Verde + ('imediatamente') + MC)))
+print("{}. Empilhar a carta sobre a {} anterior.".format((Azul + ('2') + MC), (Verde + ('terceira') + MC)))
+print("Para que se possa executar um movimento, {} condição da lista deve ser atendida:".format(Vermelho + ('ao menos uma') + MC))
+print("{}. Ambas as cartas possuem o {};".format((Azul + ('1') + MC), (Verde + ('mesmo valor') + MC)))
+print("{}. Ambas cartas possuem o {}.".format((Azul + ('2') + MC), (Verde + ('mesmo naipe') + MC)))
+print('---------------------')
+print(Vermelho + ('PARA DIFICULTAR') + MC)
+print('Os naipes {} e {} possuem a cor {}, e os naipes {} e {} possuem a cor {}'.format((Azul + ('♠') + MC), (Azul + ('♣') + MC), (Azul + ('AZUL') + MC), (Vermelho + ('♥') + MC), (Vermelho + ('♦') + MC), (Vermelho + ('VERMELHA') + MC)))
+print('---------------------')
+print('{}'.format(Verde + ('BOA SORTE') + MC))
+print('---------------------')
+
+
+
+com = int(input("Digite {} para iniciar o jogo  ".format(Azul + ('1') + MC)))
+
+while com != 1:
+    com = int(input("Digite {} para iniciar o jogo ".format(Azul + ('1') + MC)))
+
+
+f = True
+bar = cria_baralho()
+
+while f:
+    bar = g2(bar)
+    f = g3(bar)
+    
+    if f == "s":
+        f == True
+        bar = cria_baralho()
+        
+    elif f == "n":
+        f == False
+
+print(Verde + ("Volte sempre!") + MC)
